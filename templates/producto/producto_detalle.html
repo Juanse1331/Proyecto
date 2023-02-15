@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block headers %}
+<title>Produstos</title>
+{% endblock %}
+
+{% block content %}
+<div class="container detalle">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Titulo</th>
+            <th scope="col">Producto</th>
+            <th scope="col">Detalle</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ object.tittle }}</td>
+            <td>{{ object.producto }}</td>
+            <td>{{ object.detalle }}</td>
+           
+          </tr>
+        </tbody>
+      </table>    
+</div>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block headers %}
+<title>Agricultor</title>
+{% endblock %}
+
+{% block content %}
+<div class="container lista">
+    <ul class="list-group">
+        {% for agricultor in agricultor %}
+        <li class="list-group-item">{{ agricultor.nombre }} &nbsp;<a href="{% url 'agricultor_view' agricultor.id %}" class="btn btn-sm btn-success">Detalles</a>&nbsp;<a href="{% url 'agricultor_actualizar' agricultor.id %}" class="btn btn-sm btn-warning">actualizar</a>&nbsp;<a href="{% url 'agricultor_eliminar' agricultor.id %}" class="btn btn-sm btn-danger">eliminar</a></li>
+        {% endfor %}
+    </ul>    
+</div>
+
+{% endblock %}

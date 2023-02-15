@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block headers %}
+<title>Producto</title>
+{% endblock %}
+
+{% block content %}
+<div class="container lista">
+    <ul class="list-group">
+        {% for producto in productos %}
+        <li class="list-group-item">{{ productos.tittle }} &nbsp;<a href="{% url 'productos_view' productos.id %}" class="btn btn-sm btn-success">Detalles</a>&nbsp;<a href="{% url 'productos_actualizar' productos.id %}" class="btn btn-sm btn-warning">actualizar</a>&nbsp;<a href="{% url 'productos_eliminar' productos.id %}" class="btn btn-sm btn-danger">eliminar</a></li>
+        {% endfor %}
+    </ul>    
+</div>
+
+{% endblock %}
